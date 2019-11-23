@@ -1,0 +1,39 @@
+plugins {
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+
+}
+
+
+
+
+group 'cn.jacken'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+/**
+ * 指定所使用的仓库表示中央仓库
+ */
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+/**
+ * grale 中的所有的jar包都放在dependencies 属性中
+ * testCompile表示该jar包在测试的时候起作用
+ * group  name  version
+ *
+ */
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web') //必备
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf') //必备
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter')
+}
+
